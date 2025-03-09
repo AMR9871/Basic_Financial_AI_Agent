@@ -1,82 +1,109 @@
-# Basic_Financial_AI_Agent
-Technologies Used
+# AI Financial Assistant with Phi Framework
 
-1. Php-Data Structure
+A powerful multi-agent system that combines web search capabilities with financial analysis tools, built using the Phi framework.
 
-Agents: Uses the unaffiliated agent model to perform tasks.
+## Overview
 
-Tools: Provides sources such as YFinance, DuckDuckGo and GoogleSearch to agents.
+This repository contains a sophisticated AI assistant system that:
+1. Analyzes financial data from YFinance
+2. Searches the web for relevant information
+3. Combines these capabilities to provide comprehensive financial insights
+4. Includes a user-friendly Playground interface
 
-Models: Groq LLM is used here to your preferred processor and generator of responses.
+## Features
 
-2. It is focused on large Language Models (LLMs)
+- **Multi-Agent Architecture**: Combines specialized agents for different tasks
+- **Financial Analysis**: Stock prices, analyst recommendations, fundamentals, and company news
+- **Web Search Integration**: Uses Google Search and DuckDuckGo to find latest information
+- **Interactive Playground**: Test and experiment with the agents through a web interface
+- **Powered by LLaMA 3**: Leverages Groq's LLaMA 3 70B model for high-quality responses
 
-Groq Models:-
+## Repository Structure
 
-llama3-groq-70b-8192-tool-use-preview. Used for performing tasks which involve the need to search the web or am an analyst of finances.
+- `financial_agent.py`: Main implementation of the financial agent system
+- `playground.py`: Interactive playground interface for testing the agents
 
-llama-3.1-70b-versatile. This is the primary model which controls the multi-agent cooperation and is the common aspect of various queries raised by users.
+## Requirements
 
-3. Financial Data Tools
+- Python 3.8+
+- Phi Framework
+- OpenAI API key
+- Phi API key
+- Groq API key
 
-YFinanceTools:
+## Installation
 
-Provides Up to the minute stock prices, projections made by analysts, fundamentals of the organization, and the prevailing news related to it.
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/financial-ai-agent.git
+cd financial-ai-agent
 
-Gives financial data in an organized manner i.e. Makes sure that data is presented in a neat categorical manner with tables.
+# Install dependencies
+pip install phi-agent openai python-dotenv
 
-4. Web Search Tools
+# Set up environment variables
+# Create a .env file with the following:
+# OPENAI_API_KEY=your_openai_api_key
+# PHI_API_KEY=your_phi_api_key
+# GROQ_API_KEY=your_groq_api_key
+```
 
-DuckDuckGo and GoogleSearch:
+## Usage
 
-Use of websites to search for other information that may not be related to finance.
+### Running the Multi-Agent System
 
-Make sure that the sources are directly quoted (e.g., say from DuckDuckGo or Google).
+```bash
+python financial_agent.py
+```
 
-5. Environment Management
+This will demonstrate the multi-agent system analyzing NVIDIA (NVDA) stock, including analyst recommendations and latest news.
 
-dotenv: Handles API Keys and environment variables in a safe manner.
+### Running the Interactive Playground
 
-openai API: Portends chances of expansion of Open AI functionalities.
-<br>
+```bash
+python playground.py
+```
 
-System Features
+Access the playground interface in your browser at `http://localhost:8000` to interact with both the financial and web search agents.
 
-Multi-Agent System:
+## Agent Architecture
 
-Utilizes multiple agents (web_search_agent and finance_agent) for performance improvement by delegating several functions.
+### Web Search Agent
+- **Role**: Searches the web for up-to-date information
+- **Tools**: Google Search, DuckDuckGo
+- **Model**: LLaMA 3 70B (via Groq)
 
-Employs a single multi_ai_agent to assume the task of coordinating possibly all agents.
+### Financial Agent
+- **Role**: Analyzes financial data for specified stocks
+- **Tools**: YFinance (stock prices, analyst recommendations, fundamentals, news)
+- **Model**: LLaMA 3 70B (via Groq)
 
-Tool-Augmented AI:
+### Multi-AI Agent
+- **Role**: Orchestrates both agents to provide comprehensive analysis
+- **Tools**: All tools from component agents
+- **Model**: LLaMA 3.1 70B Versatile (via Groq)
 
-Each agent has its set of roles and comes with tools (e.g., YFinanceTools provides financial information, DuckDuckGo provides search results).
+## Example Queries
 
-It helps in producing more accurate and thorough information.
+- "Summarize analyst recommendations and share the latest news for NVDA"
+- "Compare the financial performance of AAPL and MSFT"
+- "Analyze recent trends in the tech sector and their impact on AMZN stock"
+- "What are the current P/E ratios for top S&P 500 companies?"
 
-Interactive Responses:
+## Customization
 
-Information is streamed to the users instead of locking the user in a single point which enhances the experience.
+You can customize the agents by:
+- Adding more tools to either agent
+- Changing the model to a different provider
+- Modifying the instructions for more specific outputs
+- Adding additional agents for more specialized tasks
 
-Sources provided is a markdown formatted structure thus is presentably structured and clear.
+## License
 
-Source Attribution:
+[MIT License](LICENSE)
 
-Provides source links to documents where information was obtained thus promoting adopting sense of accountability from the users.
+## Acknowledgments
 
-Financial Insights:
-
-Contains such analyst ratings, stock price quotes, additional company news, which can be helpful for analysts and decision makers.
-
-Applications
-
-Conducting financial analysis and taking investment decisions.
-
-Providing synopsis of financial news and other relevant trends.
-
-Conducting background research for companies/individuals on automatic mode.
-
-Creating supportive instruments for investors in the stock market.
-
-<br>
-With the combination of agentic AI and specialized tools and models, this project shows a great potential for automation of advanced tasks related to financial analysis and research.
+- [Phi Framework](https://github.com/phi-ai/phi)
+- [YFinance](https://github.com/ranaroussi/yfinance)
+- [Groq](https://groq.com/)
