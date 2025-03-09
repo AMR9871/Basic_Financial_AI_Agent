@@ -1,4 +1,4 @@
-# AI Financial Assistant with Phi Framework
+# AI Financial Agent with Phi Framework
 
 A powerful multi-agent system that combines web search capabilities with financial analysis tools, built using the Phi framework.
 
